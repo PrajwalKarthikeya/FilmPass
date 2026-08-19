@@ -52,7 +52,7 @@ export function GenreChart() {
                 fontFamily: 'var(--font-inter)'
               }}
               itemStyle={{ color: '#fff', fontWeight: 'bold' }}
-              formatter={(value: number) => [`${value}%`, 'Distribution']}
+              formatter={(value: any) => [`${value}%`, 'Distribution']}
             />
           </PieChart>
         </ResponsiveContainer>
