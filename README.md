@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=2070&auto=format&fit=crop" alt="FilmPass Hero" width="100%" style="border-radius: 12px; margin-bottom: 20px;" />
+  <img src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?q=80&w=2070&auto=format&fit=crop" alt="FilmPass Hero" width="100%" style="border-radius: 12px; margin-bottom: 20px;" />
   
   <h1 align="center">FilmPass</h1>
   <p align="center">
