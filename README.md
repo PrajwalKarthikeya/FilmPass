@@ -71,7 +71,7 @@ FilmPass is built using the latest advancements in the React ecosystem:
 
 FilmPass is deployed globally on Vercel's Edge Network for maximum performance.
 
-**Live Website:** [https://filmpass.vercel.app](https://filmpass.vercel.app) *(Update this link if your Vercel URL differs!)*
+**Live Website:** https://film-pass7.vercel.app/
 
 ---
 
