@@ -26,8 +26,8 @@ export default async function PassportsPage() {
     // Guest Mode: Demo Data (e.g. some passports have mock progress)
     userProgress = mockPassports.map(p => ({
       passport_id: p.id,
-      progress_count: p.currentCount,
-      status: p.currentCount >= p.totalRequired ? 'completed' : 'in_progress'
+      progress_count: p.progress,
+      status: p.progress >= p.total ? 'completed' : 'in-progress'
     }));
   }
 
