@@ -21,7 +21,7 @@ FilmPass is a premium, immersive digital cinema district. Collect tickets, earn 
 
 Deploying FilmPass is incredibly easy using Vercel. Once you have published this code to your own GitHub repository, click the button below to deploy:
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/yourusername/filmpass&env=NEXT_PUBLIC_SUPABASE_URL,NEXT_PUBLIC_SUPABASE_ANON_KEY,TMDB_API_KEY)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/PrajwalKarthikeya/FilmPass&env=NEXT_PUBLIC_SUPABASE_URL,NEXT_PUBLIC_SUPABASE_ANON_KEY,TMDB_API_KEY)
 
 ### Environment Variables Required
 During deployment, Vercel will ask you for three environment variables. You must provide them for the application to function correctly:
