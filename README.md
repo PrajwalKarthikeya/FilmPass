@@ -1,19 +1,3 @@
-<div align="center">
-  <img src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?q=80&w=2070&auto=format&fit=crop" alt="FilmPass Hero" width="100%" style="border-radius: 12px; margin-bottom: 20px;" />
-  
-  <h1 align="center">FilmPass</h1>
-  <p align="center">
-    <strong>A Premium, Immersive Digital Cinema District & Collector's Vault</strong>
-  </p>
-  
-  <p align="center">
-    <a href="#features">Explore Features</a> · 
-    <a href="#tech-stack">Tech Stack</a>
-  </p>
-</div>
-
-<hr />
-
 ## 🎬 About FilmPass
 
 **FilmPass** is not just a movie database; it is a meticulously crafted digital cinema district designed for cinephiles. It reimagines the movie discovery and tracking experience by blending the luxury of premium theaters with the joy of digital collecting. 
