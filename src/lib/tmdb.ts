@@ -119,8 +119,7 @@ export async function getMovieDetails(id: number): Promise<ExtendedMovieDetails 
   });
   
   if (!data) {
-    // Return a mock if fetch fails
-    return mockExtendedMovieDetails as unknown as ExtendedMovieDetails;
+    return null;
   }
   return data;
 }

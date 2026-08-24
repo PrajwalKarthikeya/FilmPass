@@ -7,7 +7,6 @@
   </p>
   
   <p align="center">
-    <a href="https://filmpass.vercel.app" target="_blank">View Live Demo</a> · 
     <a href="#features">Explore Features</a> · 
     <a href="#tech-stack">Tech Stack</a>
   </p>
