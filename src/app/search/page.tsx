@@ -96,6 +96,12 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
       <Navbar />
       
       <div className="flex-1 w-full max-w-[1600px] mx-auto px-6 md:px-12 lg:px-16 pb-32">
+        {!process.env.TMDB_API_KEY && (
+          <div className="bg-red-900/50 border border-red-500 text-red-200 p-6 rounded-xl text-center mb-8 mx-auto max-w-2xl font-mono text-sm">
+            ⚠️ <strong>Missing Environment Variable:</strong> The <code>TMDB_API_KEY</code> is not defined in your Vercel project settings. You must add it and redeploy for movies to load.
+          </div>
+        )}
+
         {/* Header & Search Bar */}
         <div className="max-w-4xl mx-auto mb-16 text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-medium text-white mb-8">
