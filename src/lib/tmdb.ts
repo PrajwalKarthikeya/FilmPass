@@ -60,20 +60,20 @@ export interface ExtendedMovieDetails extends TMDBMovieDetails {
   };
 }
 
-const TMDB_API_KEY = process.env.TMDB_API_KEY;
 const TMDB_BASE_URL = "https://api.themoviedb.org/3";
 export const TMDB_IMAGE_URL = process.env.NEXT_PUBLIC_TMDB_IMAGE_URL || "https://image.tmdb.org/t/p";
 
 import { trendingMovies as mockTrending, mockExtendedMovieDetails } from "./mock-data";
 
 async function fetchFromTMDB<T>(endpoint: string, params: Record<string, string> = {}): Promise<T | null> {
-  if (!TMDB_API_KEY) {
+  const apiKey = process.env.TMDB_API_KEY;
+  if (!apiKey) {
     console.warn("TMDB_API_KEY is not defined. Falling back to mock data.");
     return null;
   }
 
   const queryParams = new URLSearchParams({
-    api_key: TMDB_API_KEY,
+    api_key: apiKey,
     ...params,
   });
 
