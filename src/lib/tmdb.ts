@@ -113,15 +113,22 @@ export async function getTMDBMovies(endpoint: string, params: Record<string, str
   return data.results;
 }
 
-export async function getMovieDetails(id: number): Promise<ExtendedMovieDetails | null> {
-  const data = await fetchFromTMDB<ExtendedMovieDetails>(`/movie/${id}`, {
-    append_to_response: "credits,videos,images,keywords,recommendations,similar"
-  });
+export async function getMovieDetails(id: number): Promise<ExtendedMovieDetails | { error: string } | null> {
+  const apiKey = process.env.TMDB_API_KEY;
+  if (!apiKey) return { error: "Missing TMDB_API_KEY in environment variables." };
   
-  if (!data) {
-    return null;
+  const url = `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}&append_to_response=credits,videos,images,keywords,recommendations,similar`;
+  
+  try {
+    const res = await fetch(url, { next: { revalidate: 3600 } });
+    if (!res.ok) {
+      const text = await res.text();
+      return { error: `TMDB API Error ${res.status}: ${text}` };
+    }
+    return await res.json();
+  } catch (error: any) {
+    return { error: `Fetch Exception: ${error.message}` };
   }
-  return data;
 }
 
 export async function getMoviesWithDetails(movies: TMDBMovie[]): Promise<TMDBMovieDetails[]> {
@@ -129,7 +136,7 @@ export async function getMoviesWithDetails(movies: TMDBMovie[]): Promise<TMDBMov
     movies.map(async (movie) => {
       const details = await getMovieDetails(movie.id);
       // Fallback if details fetch fails
-      if (!details) {
+      if (!details || ('error' in details)) {
         return {
           ...movie,
           runtime: 120, // mock fallback
