@@ -62,6 +62,7 @@ export interface ExtendedMovieDetails extends TMDBMovieDetails {
 
 const TMDB_BASE_URL = "https://api.themoviedb.org/3";
 export const TMDB_IMAGE_URL = process.env.NEXT_PUBLIC_TMDB_IMAGE_URL || "https://image.tmdb.org/t/p";
+console.log('TMDB API Key loaded:', process.env.TMDB_API_KEY ? '***'+process.env.TMDB_API_KEY.slice(-4) : 'undefined');
 
 import { trendingMovies as mockTrending, mockExtendedMovieDetails } from "./mock-data";
 

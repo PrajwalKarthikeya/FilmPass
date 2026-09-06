@@ -40,8 +40,8 @@ export function UnlockAnimation({ onComplete }: { onComplete?: () => void }) {
             y: randoms[i].y 
           }}
           transition={{ duration: randoms[i].dur, ease: "easeOut" }}
-          className="absolute w-2 h-2 bg-[#D4AF37] shadow-[0_0_10px_#D4AF37]"
-          style={{ borderRadius: randoms[i].rad }}
+          className="absolute w-2 h-2 bg-[#D4AF37] shadow-[0_0_15px_#D4AF37]"
+          style={{ borderRadius: randoms[i].rad, filter: 'blur(1px)' }}
         />
       ))}
 
