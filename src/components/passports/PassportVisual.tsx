@@ -1,4 +1,5 @@
 "use client";
+import { useMemo } from 'react';
 
 import { motion } from "framer-motion";
 import { Passport } from "@/lib/mock-passports";
@@ -17,7 +18,8 @@ const getEmblem = (title: string) => {
 };
 
 export function PassportVisual({ passport }: { passport: Passport }) {
-  const Emblem = getEmblem(passport.title);
+  // eslint-disable-next-line react-hooks/static-components
+  const Emblem = useMemo(() => getEmblem(passport.title), [passport.title]);
 
   return (
     <motion.div

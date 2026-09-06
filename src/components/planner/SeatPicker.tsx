@@ -23,7 +23,7 @@ export function SeatPicker({ selectedSeat, onSeatSelect }: SeatPickerProps) {
       const c = cols[Math.floor(Math.random() * cols.length)];
       taken.add(`${r}${c}`);
     }
-    setTakenSeats(taken);
+    setTimeout(() => setTakenSeats(taken), 0);
   }, []);
 
   return (

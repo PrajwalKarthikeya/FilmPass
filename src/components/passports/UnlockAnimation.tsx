@@ -1,10 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useMemo } from "react";
 import { CheckCircle } from "lucide-react";
 import { useEffect, useState } from "react";
 
 export function UnlockAnimation({ onComplete }: { onComplete?: () => void }) {
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const randoms = useMemo(() => Array(30).fill(0).map(() => ({ scale: Math.random() * 1.5 + 0.5, x: (Math.random() - 0.5) * 600, y: (Math.random() - 0.5) * 600, dur: 1.5 + Math.random(), rad: Math.random() > 0.5 ? "50%" : "2px" })), []);
   const [showStamp, setShowStamp] = useState(false);
 
   useEffect(() => {
@@ -32,13 +35,13 @@ export function UnlockAnimation({ onComplete }: { onComplete?: () => void }) {
           initial={{ opacity: 1, scale: 0, x: 0, y: 0 }}
           animate={{ 
             opacity: 0, 
-            scale: Math.random() * 1.5 + 0.5,
-            x: (Math.random() - 0.5) * 600, 
-            y: (Math.random() - 0.5) * 600 
+            scale: randoms[i].scale,
+            x: randoms[i].x, 
+            y: randoms[i].y 
           }}
-          transition={{ duration: 1.5 + Math.random(), ease: "easeOut" }}
+          transition={{ duration: randoms[i].dur, ease: "easeOut" }}
           className="absolute w-2 h-2 bg-[#D4AF37] shadow-[0_0_10px_#D4AF37]"
-          style={{ borderRadius: Math.random() > 0.5 ? '50%' : '2px' }}
+          style={{ borderRadius: randoms[i].rad }}
         />
       ))}
 

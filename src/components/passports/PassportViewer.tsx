@@ -18,7 +18,7 @@ export function PassportViewer({ passport, onClose }: PassportViewerProps) {
 
   useEffect(() => {
     if (passport?.status === "completed") {
-      setShowUnlock(true);
+      setTimeout(() => setShowUnlock(true), 0);
       const timer = setTimeout(() => setShowUnlock(false), 4000);
       return () => clearTimeout(timer);
     }

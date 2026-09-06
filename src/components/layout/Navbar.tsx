@@ -60,18 +60,18 @@ export function Navbar() {
       </div>
 
       <div className="hidden md:flex items-center space-x-8 text-sm font-medium text-secondary">
-        <Link href="/" className="text-white hover:text-accent transition-colors">Home</Link>
-        <Link href="/vault" className="hover:text-white transition-colors">Vault</Link>
-        <Link href="#" className="hover:text-white transition-colors">Collections</Link>
-        <Link href="/screening" className="hover:text-white transition-colors">Theatres</Link>
-        <Link href="/passports" className="hover:text-white transition-colors">Passport</Link>
-        <Link href="/profile" className="hover:text-white transition-colors">Profile</Link>
-        <Link href="/about" className="hover:text-white transition-colors">About</Link>
+        <Link href="/" className="text-white hover:text-accent transition-colors relative group">Home<span className="absolute left-0 -bottom-1 w-full h-0.5 bg-accent/30 transition-all duration-300 group-hover:bg-accent group-hover:w-full"></span></Link>
+        <Link href="/vault" className="hover:text-white transition-colors relative group">Vault<span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span></Link>
+        <Link href="/vault#collections" className="hover:text-white transition-colors relative group">Collections<span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span></Link>
+        <Link href="/screening" className="hover:text-white transition-colors relative group">Theatres<span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span></Link>
+        <Link href="/passports" className="hover:text-white transition-colors relative group">Passport<span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span></Link>
+        <Link href="/profile" className="hover:text-white transition-colors relative group">Profile<span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span></Link>
+        <Link href="/about" className="hover:text-white transition-colors relative group">About<span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span></Link>
       </div>
 
       <div className="flex-1 flex justify-end items-center space-x-6">
-        <Link href="/search" className="text-secondary hover:text-white transition-colors" aria-label="Search movies">
-          <Search className="w-5 h-5" aria-hidden="true" />
+        <Link href="/search" className="group text-secondary hover:text-white transition-colors" aria-label="Search movies">
+          <Search className="w-5 h-5 group-hover:scale-110 transition-transform" aria-hidden="true" />
         </Link>
         
         {user ? (
@@ -83,7 +83,7 @@ export function Navbar() {
                 <User className="w-4 h-4 text-gray-400" />
               )}
             </Link>
-            <button onClick={handleLogout} className="text-secondary hover:text-white transition-colors" aria-label="Logout" title="Logout">
+            <button onClick={handleLogout} className="group text-secondary hover:text-white transition-colors" aria-label="Logout" title="Logout">
               <LogOut className="w-5 h-5" aria-hidden="true" />
             </button>
           </div>

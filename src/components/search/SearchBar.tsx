@@ -28,7 +28,7 @@ export function SearchBar() {
   // Sync with URL changes
   useEffect(() => {
     if (initialQuery !== query) {
-      setQuery(initialQuery);
+      setTimeout(() => setQuery(initialQuery), 0);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [initialQuery]);

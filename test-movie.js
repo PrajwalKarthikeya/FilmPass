@@ -1,4 +1,4 @@
-const { getMovieDetails } = require("./src/lib/tmdb.ts");
+export {}; const { getMovieDetails } = // require("./src/lib/tmdb.ts");
 
 async function run() {
   try {

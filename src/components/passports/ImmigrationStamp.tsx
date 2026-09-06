@@ -1,11 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useMemo } from "react";
 import { PassportMovie } from "@/lib/mock-passports";
 
 export function ImmigrationStamp({ movie, index }: { movie: PassportMovie, index: number }) {
   // Generate a random slight rotation for the stamp to look authentic
-  const rotation = (Math.random() * 20 - 10).toFixed(1); 
+  // eslint-disable-next-line react-hooks/purity
+  const rotation = useMemo(() => (Math.random() * 20 - 10).toFixed(1), []); 
   const color = index % 2 === 0 ? "border-[#4A90E2] text-[#4A90E2]" : "border-[#E24A4A] text-[#E24A4A]";
   
   return (

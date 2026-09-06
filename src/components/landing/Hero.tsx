@@ -117,10 +117,12 @@ export function Hero({ movies }: HeroProps) {
 
             {/* Actions */}
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 pt-4">
-              <Button size="lg" className="w-full sm:w-auto gap-2 group" aria-label={`Generate Ticket for ${movie.title}`}>
-                Generate Ticket
-                <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-              </Button>
+              <Link href={`/movie/${movie.id}#screening-planner`} passHref>
+                <Button size="lg" className="w-full sm:w-auto gap-2 group" aria-label={`Generate Ticket for ${movie.title}`}>
+                  Generate Ticket
+                  <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+                </Button>
+              </Link>
               <Link href={`/movie/${movie.id}`} passHref>
                 <Button variant="glass" size="lg" className="w-full sm:w-auto" aria-label={`Explore ${movie.title}`}>
                   Explore Movie
